@@ -1,0 +1,90 @@
+
+.App {
+  background-color: gray;
+}
+.cabeza {
+  background-color: rgb(191, 207, 195);
+}
+.mercadoBarrani {
+  background-image: url("MercadoBarrani(1).png");
+  width: 300px;
+  height: 110px;
+  background-size: 100%;
+  display: inline-block;
+  background-position: center;
+  
+}
+
+.estiloBuscador {
+  display: inline-block;
+  width: 500px;
+  height: 30px;
+  background-color: aliceblue;
+  position: absolute;
+  margin-top: 40px;
+}
+
+.buscar {
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  background-color: rgb(101, 218, 155);
+  margin-left: 10px;
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 520px;
+}
+
+.card {
+  display: inline-block;
+  background-color: rgb(202, 202, 202);
+  background-position: center;
+  background-size: 100%;
+  margin: 50px;
+  width: 250px;
+  height: 350px;
+  color: black;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 0px;
+  
+}
+.card-selected {
+  box-shadow: 20px 20px 20px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+.CrearProducto-header {
+  background-color: darkcyan;
+}
+
+.MisCryptos {
+  position: absolute;
+  background-color: rgb(233, 141, 138);
+  color: black;
+  font-size: 30px;
+  font-family: sans-serif;
+  height: 40px;
+  width: 80px;
+  display: inline-block;
+  margin-left: 580px;
+  border-radius: 5px;
+}
+
+.success {
+  height: 100px;
+  width: 100px;
+  color: black;
+  font-family: sans-serif;
+  display: block;
+}
+
+.imagen {
+  background-size: 100%;
+  width: 100%;
+  height: 150px;
+  border-radius: 10px 10px 0px 0px;
+}
+
