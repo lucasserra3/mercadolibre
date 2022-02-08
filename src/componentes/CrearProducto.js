@@ -1,7 +1,6 @@
 import Input from "./Input";
 import React from "react";
 import Button from "./Button";
-import Filtros from "./Filtros";
 
 function CrearProducto({ agregarProducto }) {
   const [Precio, setPrecio] = React.useState();
@@ -25,18 +24,50 @@ function CrearProducto({ agregarProducto }) {
     agregarProducto(Precio, Descripcion, Contacto, Imagen);
   };
 
+  const addProducto = (e) => {
+    console.log("agregando producto");
+    e.preventDefault();
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+  };
   return (
-    <div className="CrearProducto">
+    <div className="App">
       <header className="CrearProducto-header">
-        <Input label="Imagen" value={Imagen} onChange={agregarImagen}> </Input>
-        <Input label="Precio" onChange={agregarPrecio} value={Precio} />
-        <Input
-          label="Descripcion"
-          onChange={agregarDescripcion}
-          value={Descripcion}
-        />
-        <Input label="Contacto" onChange={agregarContacto} value={Contacto} />
-        <Button onClick={crearProducto} texto="Agregar Producto" />
+        <form onSubmit={addProducto}>
+          <Input
+            name="imagen"
+            label="Imagen"
+            value={Imagen}
+            onChange={agregarImagen}
+            onChange={handleChange}
+          >
+            {" "}
+          </Input>
+          <Input
+            name="precio"
+            label="Precio"
+            onChange={agregarPrecio}
+            value={Precio}
+            onChange={handleChange}
+          />
+          <Input
+            name="descripcion"
+            label="Descripcion"
+            onChange={agregarDescripcion}
+            value={Descripcion}
+            onChange={handleChange}
+          />
+          <Input
+            name="contacto"
+            label="Contacto"
+            onChange={agregarContacto}
+            value={Contacto}
+            onChange={handleChange}
+          />
+          <Button onClick={crearProducto} texto="Agregar Producto" />
+        </form>
       </header>
     </div>
   );

@@ -5,14 +5,14 @@ function EditarProducto({ editarProducto, producto }) {
   const [precio, setPrecio] = React.useState();
   const [descripcion, setDescripcion] = React.useState();
   const [contacto, setContacto] = React.useState();
-
-  React.useEffect(() => {
+ const funcionDeEditar = () => {
     if (producto) {
       setPrecio(producto.precio);
       setDescripcion(producto.descripcion);
       setContacto(producto.contacto);
     }
-  }, [producto]);
+  }
+  React.useEffect( funcionDeEditar, [producto]);
 
   const cambiarprecio = (evento) => {
     setPrecio(evento.target.value);

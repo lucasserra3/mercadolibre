@@ -19,28 +19,28 @@ function App() {
   },[state]);
   return [state, setState]
 }
+
   const listaProductos = [
     { precio: 500, descripcion: "Gorra", contacto: 1141883146, link:"https://http2.mlstatic.com/gorra-nike-sb-icon-black-D_NQ_NP_950322-MLM26572905804_122017-F.jpg"},
     { precio: 1000, descripcion: "Bandera", contacto: 1167867765, link:"https://image.freepik.com/foto-gratis/bandera-argentina-contra-cielo-nublado-blanco_88135-18110.jpg" },
     { precio: 700, descripcion: "Botines", contacto: 1141887689, link:"https://www.stockcenter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwff20d94b/products/NI_AT7946-414/NI_AT7946-414-1.JPG" },
   ];
-  const listaJugadores = [
-    { edad: 17, nombre: "Lucas", contacto: 1141883146 },
-    { edad: 22, nombre: "Nico", contacto: 1167867765 },
-    { edad: 20, nombre: "Alex", contacto: 1141887689 },
-  ];
+
   const [selectIndex, setSelectIndex] = React.useState();
   function seleccionar(index) {
     setSelectIndex(index);
   }
-  const [listaDeProductosAgregados, setListaDeProductosAgregados] = useLocalStorage("Productos", listaProductos)
+  const [listaDeLocal, setListaDeLocal] = useLocalStorage("Productos", listaProductos)
   const [listaDeProductos, setlistaDeProductos] = React.useState(listaProductos)
+
   function agregarProducto(precio, descripcion, contacto, link) {
     const newLista = [...listaDeProductos];
     newLista.push({ precio, descripcion, contacto, link });
     setlistaDeProductos(newLista);
-    setListaDeProductosAgregados(listaDeProductos)
+    setListaDeLocal(listaDeProductos)
+    
   }
+
 
   function borrarProducto(index) {
     const newLista = [...listaDeProductos];
@@ -72,7 +72,8 @@ function App() {
         <div className="cabeza">
           <div className="mercadoBarrani" />
           <Buscador value="auto" />
-          <Buscar />
+          <Buscar/>
+       
           {listaDeCrypto.map(({ number }, index) => (
             <MisCryptos index={index} number={number} />
           ))}
@@ -105,3 +106,4 @@ function App() {
 }
 
 export default App;
+
