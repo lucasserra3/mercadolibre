@@ -7,6 +7,7 @@ function EditarProducto({ editarProducto, producto }) {
   const [contacto, setContacto] = React.useState();
  const funcionDeEditar = () => {
     if (producto) {
+    
       setPrecio(producto.precio);
       setDescripcion(producto.descripcion);
       setContacto(producto.contacto);

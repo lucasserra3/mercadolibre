@@ -25,23 +25,18 @@ function App() {
     { precio: 1000, descripcion: "Bandera", contacto: 1167867765, link:"https://image.freepik.com/foto-gratis/bandera-argentina-contra-cielo-nublado-blanco_88135-18110.jpg" },
     { precio: 700, descripcion: "Botines", contacto: 1141887689, link:"https://www.stockcenter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwff20d94b/products/NI_AT7946-414/NI_AT7946-414-1.JPG" },
   ];
-
   const [selectIndex, setSelectIndex] = React.useState();
   function seleccionar(index) {
     setSelectIndex(index);
   }
   const [listaDeLocal, setListaDeLocal] = useLocalStorage("Productos", listaProductos)
   const [listaDeProductos, setlistaDeProductos] = React.useState(listaProductos)
-
   function agregarProducto(precio, descripcion, contacto, link) {
     const newLista = [...listaDeProductos];
     newLista.push({ precio, descripcion, contacto, link });
     setlistaDeProductos(newLista);
     setListaDeLocal(listaDeProductos)
-    
   }
-
-
   function borrarProducto(index) {
     const newLista = [...listaDeProductos];
     newLista.splice(index, 1);
@@ -72,8 +67,7 @@ function App() {
         <div className="cabeza">
           <div className="mercadoBarrani" />
           <Buscador value="auto" />
-          <Buscar/>
-       
+          <Buscar/> 
           {listaDeCrypto.map(({ number }, index) => (
             <MisCryptos index={index} number={number} />
           ))}
@@ -99,7 +93,6 @@ function App() {
           )}
           editarProducto={editarProducto}
         />
-        
       </div>
     </>
   );
